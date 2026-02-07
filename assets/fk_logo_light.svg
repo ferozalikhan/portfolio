@@ -1,0 +1,59 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lightFkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B6FE8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6D49A0;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="lightFkAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3D9EFC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00D8FC;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="lightFkShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Light Background -->
+  <rect width="600" height="600" fill="#F8F9FA"/>
+  
+  <!-- FK Monogram -->
+  <g transform="translate(300, 300)" filter="url(#lightFkShadow)">
+    
+    <!-- F Letter -->
+    <g>
+      <rect x="-140" y="-120" width="35" height="240" fill="url(#lightFkGrad)" rx="3"/>
+      <rect x="-140" y="-120" width="160" height="35" fill="url(#lightFkGrad)" rx="3"/>
+      <rect x="-140" y="-20" width="130" height="35" fill="url(#lightFkGrad)" rx="3"/>
+    </g>
+    
+    <!-- K Letter -->
+    <g>
+      <rect x="40" y="-120" width="35" height="240" fill="url(#lightFkGrad)" rx="3"/>
+      <path d="M 75,-20 L 165,-120 L 195,-100 L 105,0 Z" fill="url(#lightFkAccent)"/>
+      <path d="M 105,0 L 195,100 L 165,120 L 75,20 Z" fill="url(#lightFkAccent)"/>
+    </g>
+    
+    <!-- Connecting element -->
+    <circle cx="10" cy="0" r="8" fill="url(#lightFkAccent)" opacity="0.6"/>
+    
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="300" y="520" 
+        font-family="'SF Pro Display', 'Inter', -apple-system, sans-serif" 
+        font-size="32" 
+        font-weight="700" 
+        fill="url(#lightFkGrad)" 
+        text-anchor="middle" 
+        letter-spacing="6">FEROZ KHAN</text>
+</svg>
