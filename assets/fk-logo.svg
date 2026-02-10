@@ -1,0 +1,29 @@
+<svg viewBox="40 40 320 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A7C59;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A2F2A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main circular background -->
+  <circle cx="200" cy="200" r="160" fill="url(#mainGradient)"/>
+
+  <!-- F -->
+  <g transform="translate(105, 140)">
+    <rect x="0" y="0" width="16" height="120" fill="#F5F0EB" rx="2"/>
+    <rect x="0" y="0" width="65" height="16" fill="#F5F0EB" rx="2"/>
+    <rect x="0" y="52" width="50" height="16" fill="#F5F0EB" rx="2"/>
+  </g>
+
+  <!-- K -->
+  <g transform="translate(205, 140)">
+    <rect x="0" y="0" width="16" height="120" fill="#F5F0EB" rx="2"/>
+    <g transform="rotate(-45 16 52)">
+      <rect x="16" y="46" width="60" height="14" fill="#F5F0EB" rx="2"/>
+    </g>
+    <g transform="rotate(45 16 68)">
+      <rect x="16" y="62" width="60" height="14" fill="#F5F0EB" rx="2"/>
+    </g>
+  </g>
+</svg>
