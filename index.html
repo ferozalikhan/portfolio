@@ -1,167 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Feroz Khan — Software Engineer specializing in full-stack web development. Recent CS grad building scalable applications at Voulay.">
-   <meta property="og:title" content="Feroz Khan | Software Engineer">
-   <meta property="og:description" content="Software Engineer specializing in full-stack web development. Recent CS grad building scalable applications at Voulay.">
-   <meta property="og:image" content="./assets/profile.jpeg">
-   <meta property="og:type" content="website">
-   <link rel="icon" type="image/svg+xml" href="./assets/fk-logo.svg">
-   <title>Feroz Khan | Software Engineer</title>
-   <link rel="stylesheet" href="styles.css">
-   <script src="https://kit.fontawesome.com/7921fc4cc5.js" crossorigin="anonymous"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Feroz Khan — Software Engineer specializing in full-stack web development. Recent CS grad building scalable applications at Voulay."
+    />
+    <meta property="og:title" content="Feroz Khan | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software Engineer specializing in full-stack web development. Recent CS grad building scalable applications at Voulay."
+    />
+    <meta property="og:image" content="./assets/profile.jpeg" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="./assets/fk-logo.svg" />
+    <title>Feroz Khan | Software Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/7921fc4cc5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#hero">Skip to main content</a>
 
-   <a class="skip-link" href="#hero">Skip to main content</a>
+    <header>
+      <div class="logo">
+        <img src="./assets/fk-logo.svg" alt="Feroz Khan Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="hero-content">
+          <h1>Hi, I'm Feroz <span class="wave">👋</span></h1>
+          <p class="hero-subtitle">Software Engineer at Voulay</p>
+          <p>
+            Recent CS grad who likes building things from front to back. Always
+            working on something new.
+          </p>
 
-   <header>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#about">See My Work</a>
+            <a
+              class="btn btn-secondary"
+              href="./assets/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-solid fa-file-lines"></i> Resume</a
+            >
+          </div>
+        </div>
 
-       <div class="logo">
-           <img src="./assets/fk-logo.svg" alt="Feroz Khan Logo">
-       </div>
-       <nav>
-           <ul>
-               <li><a href="#about">About</a></li>
-               <li><a href="./assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-               <li><a href="#contact">Contact</a></li>
-           </ul>
-       </nav>
-   </header>
-   <main>
-        <section id="hero">
-           <div class="hero-content">
-               <h1>Hi, I'm Feroz </h1>
-               <p>
-                   Recent Computer Science grad who likes building things from front to back. Currently, I
- am a Software Engineer at Voulay, and I'm always working on something new.
-               </p>
-               <ul id="social-links">
-                   <li><a href="https://www.linkedin.com/in/feroz-ali-khan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a></li>
-                   <li><a href="https://github.com/ferozalikhan" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a></li>
-                   <li><a href="mailto:ferozalikhan666@gmail.com" aria-label="Send email"><i class="fa-solid fa-envelope"></i></a></li>
-               </ul>
-               <a id="see-work" href="#about">See My Work</a>
+        <div class="hero-image-section">
+          <div class="profile-pic">
+            <img src="./assets/profile.jpeg" alt="Profile Image" />
+          </div>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/feroz-ali-khan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/ferozalikhan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="mailto:ferozalikhan666@gmail.com" aria-label="Send email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </section>
 
-
-           </div>
-
-            <div class="profile-pic">
-               <img src="./assets/profile.jpeg" alt="Profile Image">
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fa-solid fa-briefcase"></i>
             </div>
+            <h3>Voulay</h3>
+            <div class="about-img">
+              <img src="./assets/voulay.jpeg" alt="Voulay Image" />
+            </div>
+            <p>
+              I work as a Software Engineer at Voulay, where I build and
+              maintain scalable web applications.
+            </p>
+          </div>
 
-        </section>
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3>Education</h3>
+            <div class="about-img">
+              <img src="./assets/graduation.png" alt="Graduation Image" />
+            </div>
+            <p>
+              I recently graduated from the University of California, Chico with
+              a degree in Computer Science.
+            </p>
+          </div>
 
-           <section id="about">
-               <h2>About Me</h2>
-               <div class="about-content">
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3>Projects</h3>
 
-                    <div class="about-card">
-                       <div class="about-icon">
-                           <i class="fa-solid fa-briefcase"></i>
-                       </div>
-                       <h3>Voulay</h3>
-                       <div class="about-img">
-                           <img src="./assets/voulay.jpeg" alt="Voulay Image">
-                       </div>
-                       <p>
-                           I work as a Software Engineer at Voulay, where I build and maintain scalable web applications.
-                       </p>
-                   </div>
+            <div class="about-img">
+              <img
+                src="./assets/project_presentation.jpeg"
+                alt="Coding Image"
+              />
+            </div>
+            <p>
+              Full-stack apps built from scratch. Designed, developed, and
+              deployed all by me.
+            </p>
+          </div>
 
-                   <div class="about-card">
-                       <div class="about-icon">
-                           <i class="fa-solid fa-graduation-cap"></i>
-                       </div>
-                       <h3>Education</h3>
-                       <div class="about-img">
-                           <img src="./assets/graduation.png" alt="Graduation Image">
-                       </div>
-                       <p>
-                               I recently graduated from the University of California, Chico with a degree in Computer Science.
-                       </p>
-                   </div>
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Based in Sacramento, CA</h3>
+            <div class="about-img">
+              <img src="./assets/location.png" alt="Travel Image" />
+            </div>
+            <p>
+              I currently live in Sacramento, CA, but I'm open to opportunities
+              anywhere.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa-solid fa-palette"></i>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML</span>
+              <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+              <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-chip"><i class="fa-brands fa-react"></i> React</span>
+              <span class="skill-chip"><i class="fa-solid fa-code"></i> TypeScript</span>
+            </div>
+          </div>
 
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa-solid fa-server"></i>
+              <h3>Backend</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-chip"><i class="fa-brands fa-node"></i> Express</span>
+              <span class="skill-chip"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="skill-chip"><i class="fa-solid fa-leaf"></i> MongoDB</span>
+            </div>
+          </div>
 
-                    <div class="about-card">
-                       <div class="about-icon">
-                           <i class="fa-solid fa-laptop-code"></i>
-                       </div>
-                       <h3>Projects</h3>
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <h3>Tools & Platforms</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="skill-chip"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="skill-chip"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="skill-chip"><i class="fa-brands fa-linux"></i> Linux</span>
+              <span class="skill-chip"><i class="fa-solid fa-code"></i> VS Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                       <div class="about-img">
-                           <img src="./assets/project_presentation.jpeg" alt="Coding Image">
-                       </div>
-                       <p>
-                           Full-stack apps built from scratch. Designed, developed, and deployed all by me.
+      <section class="quotes">
+        <blockquote>
+          "Feroz showed strong technical ability and a talent for learning new
+          systems quickly. I could always count on him to follow through —
+          whether it was fixing a bug, testing a feature, or supporting others
+          on the team."
+        </blockquote>
 
+        <cite> Placide Severe, CEO at Voulay</cite>
+      </section>
 
-                       </p>
+      <section id="contact" class="cta">
+        <div class="cta-container">
+          <div class="cta-content">
+            <h3>Let's Build Something Great Together!</h3>
+            <p>I'm open to new opportunities. Let's talk.</p>
+          </div>
+          <ul class="contact-links">
+            <li>
+              <a href="mailto:ferozalikhan666@gmail.com"
+                ><i class="fa-solid fa-envelope"></i>
+                ferozalikhan666@gmail.com</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/feroz-ali-khan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/ferozalikhan"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github"></i> GitHub</a
+              >
+            </li>
+          </ul>
 
-                   </div>
-
-                       <div class="about-card">
-                           <div class="about-icon">
-                               <i class="fa-solid fa-location-dot"></i>
-                           </div>
-                           <h3>Based in Sacramento, CA</h3>
-                           <div class="about-img">
-                               <img src="./assets/location.png" alt="Travel Image">
-                           </div>
-                           <p>
-                                   I currently live in Sacramento, CA, but I'm open to opportunities anywhere.
-                           </p>
-                       </div>
-
-
-
-
-               </div>
-           </section>
-
-           <section class="quotes">
-               <blockquote>
-                   "Feroz showed strong technical ability and a talent for learning new systems quickly. I could always count on him to follow
- through — whether it was fixing a bug, testing a feature, or supporting others on the team."
-               </blockquote>
-
-               <cite>  Placide Severe, CEO at Voulay</cite>
-
-           </section>
-
-           <section id="contact" class="cta">
-               <div class="cta-container">
-                   <div class="cta-content">
-                       <h3>Let's Build Something Great Together!</h3>
-                   <p>
-                       I'm open to new opportunities. Let's talk.
-                   </p>
-                   </div>
-                   <ul class="contact-links">
-                           <li><a href="mailto:ferozalikhan666@gmail.com"><i class="fa-solid fa-envelope"></i> ferozalikhan666@gmail.com</a></li>
-                           <li><a href="https://www.linkedin.com/in/feroz-ali-khan/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-                           <li><a href="https://github.com/ferozalikhan" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></li>
-                       </ul>
-
-                   <div class="contact-right">
-                       <a href="https://www.linkedin.com/in/feroz-ali-khan/" target="_blank" rel="noopener noreferrer" class="cta-link">Let's Connect</a>
-                       
-                   </div>
-                   
-               </div>
-
-
-           </section>
-
-   </main>
-   <footer>
-    
-       <p>Copyright &copy; Feroz Khan 2026</p>
-   </footer>
-
-
-</body>
+          <div class="contact-right">
+            <a
+              href="https://www.linkedin.com/in/feroz-ali-khan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+              >Let's Connect</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-social">
+        <a
+          href="https://www.linkedin.com/in/feroz-ali-khan/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/ferozalikhan"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="mailto:ferozalikhan666@gmail.com" aria-label="Email"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+      </div>
+      <p>Copyright &copy; Feroz Khan 2026</p>
+    </footer>
+  </body>
 </html>
