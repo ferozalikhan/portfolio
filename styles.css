@@ -371,11 +371,95 @@ nav ul li a:hover{
 }
 
 /* ============================================
+   SKILLS
+   ============================================ */
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 100px;
+    background-color: var(--color-soft-text);
+}
+
+#skills h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--color-dark);
+}
+
+.skills-grid {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.skill-category {
+    flex: 1;
+    background-color: var(--color-light-bg);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.skill-category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skill-category-header i {
+    font-size: 22px;
+    color: var(--color-accent);
+}
+
+.skill-category-header h3 {
+    font-size: 20px;
+    color: var(--color-dark-text);
+}
+
+.skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: var(--color-soft-text);
+    color: var(--color-dark-text);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-chip i {
+    font-size: 14px;
+}
+
+.skill-chip:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+/* ============================================
    QUOTES
    ============================================ */
 
 .quotes{
-    background-color: var(--color-soft-text);
+    background-color: var(--color-light-bg);
     color: var(--color-dark);
     padding: 80px 100px;
     display: flex;
@@ -540,6 +624,10 @@ footer{
         flex: 1 1 calc(50% - 12px);
     }
 
+    #skills {
+        padding: 60px 40px;
+    }
+
     .quotes {
         padding: 60px 40px;
     }
@@ -603,6 +691,14 @@ footer{
 
     .hero-content h1 {
         font-size: 36px;
+    }
+
+    .skills-grid {
+        flex-direction: column;
+    }
+
+    #skills {
+        padding: 50px 20px;
     }
 
     .quotes blockquote {
@@ -671,6 +767,15 @@ footer{
 
     #about h2 {
         font-size: 28px;
+    }
+
+    #skills h2 {
+        font-size: 28px;
+    }
+
+    .skill-chip {
+        font-size: 13px;
+        padding: 6px 12px;
     }
 
     .quotes blockquote {
