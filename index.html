@@ -16,6 +16,9 @@
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="./assets/fk-logo.svg" />
     <title>Feroz Khan | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <script
       src="https://kit.fontawesome.com/7921fc4cc5.js"
@@ -29,7 +32,7 @@
       <div class="logo">
         <img src="./assets/fk-logo.svg" alt="Feroz Khan Logo" />
       </div>
-      <nav>
+      <nav id="main-nav">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -37,19 +40,35 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
     <main>
       <section id="hero">
         <div class="hero-content">
-          <h1>Hi, I'm Feroz <span class="wave">👋</span></h1>
-          <p class="hero-subtitle">Software Engineer at Voulay</p>
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1>Feroz Khan <span class="wave">👋</span></h1>
           <p>
-            Recent CS grad who likes building things from front to back. Always
-            working on something new.
+            I build full-stack web applications from the ground up — clean
+            React UIs, solid Node.js APIs, and scalable backends. Currently
+            at Voulay, always shipping.
           </p>
+          <div class="hero-pills">
+            <div class="profile-role-chip">
+              <i class="fa-solid fa-briefcase"></i> Software Engineer · Voulay
+            </div>
+            <div class="availability-badge">
+              <span class="badge-dot"></span>
+              Open to Opportunities
+            </div>
+          </div>
 
           <div class="hero-buttons">
-            <a class="btn btn-primary" href="#about">See My Work</a>
+            <a class="btn btn-primary" href="#projects">View Projects</a>
             <a
               class="btn btn-secondary"
               href="./assets/resume.pdf"
@@ -61,8 +80,10 @@
         </div>
 
         <div class="hero-image-section">
-          <div class="profile-pic">
-            <img src="./assets/profile.jpeg" alt="Profile Image" />
+          <div class="profile-pic-wrapper">
+            <div class="profile-pic">
+              <img src="./assets/profile.jpeg" alt="Profile Image" />
+            </div>
           </div>
           <div class="social-links">
             <a
@@ -83,6 +104,9 @@
               ><i class="fa-solid fa-envelope"></i
             ></a>
           </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
       </section>
 
@@ -332,5 +356,23 @@
       </div>
       <p>Copyright &copy; Feroz Khan 2026</p>
     </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', function () {
+      const isOpen = nav.classList.toggle('is-open');
+      hamburger.classList.toggle('is-active');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        hamburger.classList.remove('is-active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
   </body>
 </html>
