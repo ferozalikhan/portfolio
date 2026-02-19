@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -104,6 +104,10 @@ a:focus-visible {
    HEADER & NAV
    ============================================ */
 
+.logo {
+    margin-right: auto;
+}
+
 .logo img{
     height: 45px;
     width: auto;
@@ -118,23 +122,113 @@ ul{
 nav ul li a {
     text-decoration: none;
     color: var(--color-light-text);
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 8px 16px;
     font-weight: 500;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.22s ease;
 }
 
 header{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 100px;
+    gap: 4px;
+    padding: 18px 100px;
     background-color: var(--color-dark);
+    border-bottom: 1px solid rgba(74, 124, 89, 0.25);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav ul li a:hover{
-    background-color: var(--color-accent);
+/* Nav CTA pill — desktop only */
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: var(--color-accent);
     color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    margin-left: 12px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(74, 124, 89, 0.35);
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: rgba(232, 224, 213, 0.05);
+    border: 1px solid rgba(232, 224, 213, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hamburger:hover {
+    background: rgba(232, 224, 213, 0.1);
+    border-color: rgba(232, 224, 213, 0.3);
+}
+
+.hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--color-light-text);
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+}
+
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
 }
 
 /* ============================================
@@ -157,8 +251,13 @@ nav ul li a:hover{
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-dark);
+    background-image:
+        radial-gradient(ellipse at 72% 45%, rgba(74, 124, 89, 0.14) 0%, transparent 55%),
+        radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: auto, 28px 28px;
     color: var(--color-light-text);
     padding: 80px 100px;
+    position: relative;
 }
 
 .hero-content{
@@ -167,10 +266,20 @@ nav ul li a:hover{
     animation: fadeInUp 0.6s ease forwards;
 }
 
+.hero-greeting {
+    font-size: 18px;
+    color: var(--color-soft-text);
+    font-weight: 400;
+    margin-bottom: 4px;
+    opacity: 0.8;
+}
+
 .hero-content h1{
-    font-size: 48px;
-    margin-bottom: 8px;
+    font-size: 58px;
+    font-weight: 800;
+    margin-bottom: 12px;
     color: var(--color-light-text);
+    line-height: 1.1;
 }
 
 .hero-content h1 .wave {
@@ -204,6 +313,42 @@ nav ul li a:hover{
     line-height: 1.6;
 }
 
+.hero-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(74, 124, 89, 0.1);
+    border: 1px solid rgba(74, 124, 89, 0.3);
+    color: var(--color-accent);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+
 .hero-buttons {
     display: flex;
     align-items: center;
@@ -212,74 +357,104 @@ nav ul li a:hover{
 }
 
 
-/* Hero right side: profile pic + vertical social bar */
+/* Hero right side: profile pic + info stacked below */
 .hero-image-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 28px;
+    justify-content: flex-start;
+    gap: 44px;
     animation: fadeInUp 0.6s ease 0.2s forwards;
     opacity: 0;
 }
 
-/* Social links — vertical bar beside profile pic */
-.social-links {
-    display: flex;
-    flex-direction: column;
+/* Role chip — neutral informational pill */
+.profile-role-chip {
+    display: inline-flex;
     align-items: center;
-    gap: 0;
-    position: relative;
+    gap: 6px;
+    background: rgba(232, 224, 213, 0.07);
+    border: 1px solid rgba(232, 224, 213, 0.14);
+    color: var(--color-soft-text);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
-/* Connecting line between icons */
-.social-links::before {
-    content: '';
-    position: absolute;
-    top: 42px;
-    bottom: 42px;
-    width: 1px;
-    background-color: rgba(232, 224, 213, 0.2);
-    z-index: 0;
+.profile-role-chip i {
+    font-size: 11px;
+    color: var(--color-accent);
+}
+
+/* Social links — glass pill container */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(232, 224, 213, 0.06);
+    border: 1px solid rgba(232, 224, 213, 0.12);
+    border-radius: 999px;
+    padding: 5px 8px;
+    backdrop-filter: blur(6px);
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     text-decoration: none;
-    background-color: rgba(232, 224, 213, 0.08);
-    border: 1.5px solid rgba(232, 224, 213, 0.2);
-    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    position: relative;
-    z-index: 1;
-    margin: 8px 0;
+    background: transparent;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-links a i {
-    font-size: 18px;
-    color: var(--color-light-text);
-    transition: color 0.25s ease, transform 0.25s ease;
+    font-size: 16px;
+    color: rgba(232, 224, 213, 0.7);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
     background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: scale(1.15);
-    box-shadow: 0 0 16px rgba(74, 124, 89, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(74, 124, 89, 0.45);
 }
 
 .social-links a:hover i {
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Staggered entrance for each link */
 .social-links a:nth-child(1) { animation: fadeInUp 0.4s ease 0.4s forwards; opacity: 0; }
 .social-links a:nth-child(2) { animation: fadeInUp 0.4s ease 0.55s forwards; opacity: 0; }
 .social-links a:nth-child(3) { animation: fadeInUp 0.4s ease 0.7s forwards; opacity: 0; }
+
+.profile-pic-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -36px;
+    border-radius: 50%;
+    border: 2px dashed rgba(74, 124, 89, 0.55);
+    pointer-events: none;
+    animation: spinRing 9s linear infinite;
+}
+
+@keyframes spinRing {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
 
 .profile-pic{
     width: 300px;
@@ -300,6 +475,30 @@ nav ul li a:hover{
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* Scroll cue — animated chevron at bottom-center of hero */
+.scroll-cue {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-soft-text);
+    opacity: 0.35;
+    animation: scrollBounce 2.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.scroll-cue i {
+    font-size: 18px;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { opacity: 0.35; transform: translateX(-50%) translateY(0); }
+    50%       { opacity: 0.6;  transform: translateX(-50%) translateY(5px); }
 }
 
 /* ============================================
@@ -671,32 +870,71 @@ nav ul li a:hover{
     transform: translateY(-2px);
 }
 
-.project-card-teaser {
-    opacity: 0.8;
+.project-card-compact {
+    grid-template-columns: 1fr;
+    border: 1px solid rgba(74, 124, 89, 0.25);
+    background:
+        radial-gradient(circle at top right, rgba(74, 124, 89, 0.14), transparent 48%),
+        linear-gradient(160deg, #ffffff, #f5f0eb);
 }
 
-.teaser-overlay {
-    height: 100%;
-    min-height: 200px;
+.project-card-compact .project-body {
+    padding: 22px 24px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     gap: 10px;
-    background: var(--color-soft-text);
+    min-height: 0;
 }
 
-.teaser-overlay i {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    color: var(--color-accent);
-}
-
-.teaser-overlay p {
-    color: var(--color-dark-text);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+.project-card-compact .project-label {
+    align-self: flex-start;
+    font-size: 0.68rem;
     font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    border: 1px solid rgba(74, 124, 89, 0.34);
+    border-radius: 999px;
+    padding: 5px 9px;
+}
+
+.project-card-compact h3 {
+    font-size: clamp(1.28rem, 1.8vw, 1.6rem);
+    line-height: 1.3;
+    color: var(--color-dark);
+}
+
+.project-card-compact p {
+    color: var(--color-dark-text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    max-width: none;
+}
+
+.project-card-compact .project-links {
+    margin-top: 4px;
+}
+
+.project-card-compact .project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 6px 14px rgba(74, 124, 89, 0.26);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.project-card-compact .project-links a:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(74, 124, 89, 0.35);
 }
 
 /* ============================================
@@ -849,7 +1087,8 @@ footer{
 
 @media (max-width: 1024px) {
     header {
-        padding: 20px 40px;
+        padding: 18px 40px;
+        gap: 4px;
     }
 
     #hero {
@@ -910,27 +1149,12 @@ footer{
         justify-content: center;
     }
 
+    .hero-pills {
+        justify-content: center;
+    }
+
     .hero-image-section {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .social-links {
-        flex-direction: row;
-        gap: 0;
-    }
-
-    .social-links::before {
-        top: auto;
-        bottom: auto;
-        left: 44px;
-        right: 44px;
-        width: auto;
-        height: 1px;
-    }
-
-    .social-links a {
-        margin: 0 8px;
+        gap: 44px;
     }
 
     .profile-pic {
@@ -939,7 +1163,11 @@ footer{
     }
 
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 38px;
+    }
+
+    .scroll-cue {
+        display: none;
     }
 
     .skills-grid {
@@ -990,7 +1218,55 @@ footer{
     }
 
     header {
-        padding: 20px 20px;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        gap: 0;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        border-top: 1px solid transparent;
+        transition: max-height 0.32s ease, border-color 0.32s ease, padding 0.32s ease;
+        padding: 0 4px;
+    }
+
+    nav.is-open {
+        max-height: 320px;
+        border-top-color: rgba(255, 255, 255, 0.08);
+        padding: 10px 4px 14px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 16px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    nav ul li a::after {
+        display: none;
+    }
+
+    nav ul li a:hover {
+        background: rgba(232, 224, 213, 0.07);
+        color: #fff;
     }
 
     #about {
@@ -1012,22 +1288,18 @@ footer{
 
 /* Responsive: Phone */
 @media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
 
     .profile-pic {
         width: 150px;
         height: 150px;
     }
 
-    .hero-content h1 {
-        font-size: 28px;
+    .hero-greeting {
+        display: none;
     }
 
-    .hero-subtitle {
-        font-size: 16px;
+    .hero-content h1 {
+        font-size: 32px;
     }
 
     #about h2 {
